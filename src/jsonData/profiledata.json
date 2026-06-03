@@ -1,0 +1,45 @@
+[
+  {
+    "name": "Kunal",
+    "course": "Java",
+    "address": "Delhi",
+    "Ages": 20,
+    "imgUrl": "https://img.magnific.com/free-photo/horizontal-portrait-smiling-happy-young-pleasant-looking-female-wears-denim-shirt-stylish-glasses-with-straight-blonde-hair-expresses-positiveness-poses_176420-13176.jpg?semt=ais_hybrid&w=740&q=80"
+  },
+  {
+    "name": "Kunal",
+    "course": "Java",
+    "address": "Delhi",
+    "Ages": 20,
+    "imgUrl": "https://img.magnific.com/free-photo/horizontal-portrait-smiling-happy-young-pleasant-looking-female-wears-denim-shirt-stylish-glasses-with-straight-blonde-hair-expresses-positiveness-poses_176420-13176.jpg?semt=ais_hybrid&w=740&q=80"
+  },
+  
+  {
+    "name": "Diya",
+    "course": "Java",
+    "address": "Delhi",
+    " Ages": 22,
+    "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkliIuVgejvDwavQJbzUFo2z99ptt-UGB43w&s"
+  },
+  {
+    "name": "Diya",
+    "course": "Java",
+    "address": "Delhi",
+    "Ages": 22,
+    "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkliIuVgejvDwavQJbzUFo2z99ptt-UGB43w&s"
+  },
+  {
+    "name": "Diya",
+    "course": "Java",
+    "address": "Delhi",
+    "Ages": 22,
+    "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkliIuVgejvDwavQJbzUFo2z99ptt-UGB43w&s"
+  },
+  {
+    "name": "Diya",
+    "course": "Java",
+    "address": "Delhi",
+    "Ages": 22,
+    "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkliIuVgejvDwavQJbzUFo2z99ptt-UGB43w&s"
+  }
+]
