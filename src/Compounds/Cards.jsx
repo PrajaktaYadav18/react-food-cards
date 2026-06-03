@@ -1,67 +1,52 @@
-import React, { useState } from "react";
+import React from "react";
 import foodData from "../jsonData/foodData.json";
 import "./Cards.css";
 
-function Cards() {
-  const [search, setSearch] = useState("");
-  const [selectedState, setSelectedState] = useState("All");
-  const [likes, setLikes] = useState([]);
+function Cards({ search, filter, favorites, setFavorites }) {
 
-  const toggleLike = (index) => {
-    if (likes.includes(index)) {
-      setLikes(likes.filter((i) => i !== index));
+  const toggleFav = (food) => {
+    if (favorites.includes(food)) {
+      setFavorites(favorites.filter((f) => f !== food));
     } else {
-      setLikes([...likes, index]);
+      setFavorites([...favorites, food]);
     }
   };
 
   const filteredData = foodData.filter((item) => {
-    return (
-      item.food.toLowerCase().includes(search.toLowerCase()) &&
-      (selectedState === "All" || item.state === selectedState)
-    );
+    const matchSearch = item.food.toLowerCase().includes(search.toLowerCase());
+
+    const matchFilter =
+      filter === "all"
+        ? true
+        : filter === "veg"
+        ? true   // (you can extend JSON later)
+        : true;
+
+    return matchSearch && matchFilter;
   });
 
-  const states = ["All", ...new Set(foodData.map((item) => item.state))];
-
   return (
-    <div>
-      {/* FILTER SECTION */}
-      <div className="filters">
-        <input
-          type="text"
-          placeholder="Search food..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+    <div className="container">
 
-        <select onChange={(e) => setSelectedState(e.target.value)}>
-          {states.map((state, i) => (
-            <option key={i} value={state}>
-              {state}
-            </option>
-          ))}
-        </select>
-      </div>
+      {filteredData.map((item, index) => (
+        <div className="card" key={index}>
 
-      {/* CARDS */}
-      <div className="container">
-        {filteredData.map((item, index) => (
-          <div className="card" key={index}>
-            <img src={item.image} alt={item.food} />
+          <img src={item.image} alt={item.food} />
 
-            <div className="card-content">
-              <h2>{item.food}</h2>
-              <h4>{item.state}</h4>
-              <p>{item.description}</p>
+          <div className="card-content">
+            <h2>{item.food}</h2>
+            <h4>{item.state}</h4>
+            <p>{item.description}</p>
 
-              <button onClick={() => toggleLike(index)}>
-                {likes.includes(index) ? "❤️ Liked" : "🤍 Like"}
-              </button>
-            </div>
+            {/* LIKE / FAVORITE */}
+            <button onClick={() => toggleFav(item.food)}>
+              {favorites.includes(item.food) ? "❤️ Favorite" : "🤍 Like"}
+            </button>
           </div>
-        ))}
-      </div>
+
+        </div>
+      ))}
+
     </div>
   );
 }

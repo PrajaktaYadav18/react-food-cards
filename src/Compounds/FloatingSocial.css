@@ -1,0 +1,23 @@
+.floating {
+  position: fixed;
+  left: 15px;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+
+.floating a {
+  background: #ff6b35;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.floating a:hover {
+  transform: scale(1.2);
+}
